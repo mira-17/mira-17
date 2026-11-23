@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign Up | EventHub</title>
+  <meta name="description" content="Create your free EventHub account.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: Manrope (headings) + Inter (body) — the only two families used -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ HEADER (same on every page) ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="EventHub home"><svg class="logo-mark" viewBox="0 0 36 36" aria-hidden="true" focusable="false"><rect width="36" height="36" rx="10" fill="#3245B8"/><rect x="8" y="10" width="20" height="18" rx="3.5" fill="none" stroke="#fff" stroke-width="2.4"/><path d="M8 15.5h20M13.5 7v4.5M22.5 7v4.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="22.5" cy="22.5" r="2.6" fill="#E9A23B"/></svg><span><span class="logo-event">Event</span><span class="logo-hub">Hub</span></span></a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="about.html">About Us</a></li>
+          <li><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a class="btn btn--secondary" href="login.html">Login</a>
+          <a class="btn btn--primary" href="signup.html" aria-current="page">Sign Up</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="auth-section">
+      <div class="container">
+        <div class="auth-layout">
+          <div class="auth-form">
+            <h1>Create your account</h1>
+            <p>Join EventHub to register for events in just a few clicks.</p>
+            <div class="demo-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span><strong>Demo mode:</strong> real authentication is not implemented. Forms are validated in the browser only.</span>
+            </div>
+
+            <form class="form" data-form="signup" novalidate>
+              <div class="alert" role="status" aria-live="polite">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <div><strong data-alert-title></strong><span data-alert-text></span></div>
+            </div>
+
+              <div class="field">
+                <label for="signup-name">Full Name</label>
+                <input class="input" type="text" id="signup-name" name="name" autocomplete="name"
+                       placeholder="Jane Doe" required minlength="2" data-validate data-rule="name" data-label="Full name"
+                       aria-describedby="signup-name-error">
+                <p class="field-error" id="signup-name-error"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span></span></p>
+              </div>
+
+              <div class="field">
+                <label for="signup-email">Email Address</label>
+                <input class="input" type="email" id="signup-email" name="email" autocomplete="email"
+                       placeholder="name@example.com" required data-validate data-label="Email address"
+                       aria-describedby="signup-email-error">
+                <p class="field-error" id="signup-email-error"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span></span></p>
+              </div>
+
+              <div class="field">
+              <label for="signup-password">Password</label>
+              <div class="input-group">
+                <input class="input" type="password" id="signup-password" name="signup-password" autocomplete="new-password"
+                       required data-validate data-label="Password" aria-describedby="signup-password-error signup-password-hint" minlength="8" data-rule="password">
+                <button class="password-toggle" type="button" aria-controls="signup-password" aria-pressed="false" aria-label="Show password">
+                  <svg class="icon-show" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  <svg class="icon-hide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                </button>
+              </div>
+              <div class="strength" data-strength data-level="0" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+              <p class="field-hint" id="signup-password-hint" data-strength-label>Use 8+ characters with letters and numbers.</p>
+              <p class="field-error" id="signup-password-error"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span></span></p>
+            </div>
+
+              <div class="field">
+              <label for="signup-confirm">Confirm Password</label>
+              <div class="input-group">
+                <input class="input" type="password" id="signup-confirm" name="signup-confirm" autocomplete="new-password"
+                       required data-validate data-label="Confirm Password" aria-describedby="signup-confirm-error" data-match="signup-password">
+                <button class="password-toggle" type="button" aria-controls="signup-confirm" aria-pressed="false" aria-label="Show password">
+                  <svg class="icon-show" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  <svg class="icon-hide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                </button>
+              </div>
+              
+              <p class="field-error" id="signup-confirm-error"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span></span></p>
+            </div>
+
+              <button class="btn btn--primary btn--lg btn--block" type="submit">Sign Up</button>
+
+              <p class="form-footer">Already have an account? <a href="login.html">Login</a></p>
+            </form>
+          </div>
+        <aside class="auth-aside" aria-hidden="true">
+          <div>
+            <h2>Start discovering great events.</h2>
+            <ul class="check-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Free to join, no credit card needed</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Register for events in seconds</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>Personalised event recommendations</span></li>
+            </ul>
+          </div>
+          <!-- REPLACE IMAGE: assets/images/event-conference.svg -->
+          <img src="assets/images/event-conference.svg" alt="" width="640" height="400" loading="lazy">
+        </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER (same on every page) ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="logo" href="index.html" aria-label="EventHub home"><svg class="logo-mark" viewBox="0 0 36 36" aria-hidden="true" focusable="false"><rect width="36" height="36" rx="10" fill="#3245B8"/><rect x="8" y="10" width="20" height="18" rx="3.5" fill="none" stroke="#fff" stroke-width="2.4"/><path d="M8 15.5h20M13.5 7v4.5M22.5 7v4.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="22.5" cy="22.5" r="2.6" fill="#E9A23B"/></svg><span><span class="logo-event">Event</span><span class="logo-hub">Hub</span></span></a>
+          <!-- EDIT: footer description -->
+          <p>EventHub brings people together. Discover conferences, workshops and meetups, and register for the events that matter to you, all in one place.</p>
+          <!-- EDIT: replace "#" with your social media profile URLs -->
+          <div class="social-links">
+            <a href="#" aria-label="EventHub on LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="#" aria-label="EventHub on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="EventHub on Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" aria-label="EventHub on X (Twitter)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="footer-title">Quick Links</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="footer-title">Account</h2>
+          <ul class="footer-links">
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> EventHub. All rights reserved.</p>
+        <p>Made for a university project.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/forms.js" defer></script>
+</body>
+</html>
